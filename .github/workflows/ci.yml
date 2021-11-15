@@ -208,6 +208,11 @@ jobs:
         coverage xml
       shell: bash
 
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        fail_ci_if_error: false
+
   test_macos:
     timeout-minutes: 15
     needs: [style, build, build_wheels]
@@ -351,11 +356,6 @@ jobs:
       run: |
         make -C Doc/api html
       shell: bash
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
-      with:
-        fail_ci_if_error: true
 
   cleanup_wheels:
     if: always()
