@@ -6,6 +6,10 @@
 
 [report]
 # Regexes for lines to exclude from consideration
+omit =
+    */Tests/*
+    */build/*
+    */dist-packages/*
 exclude_lines =
     # Have to re-enable the standard pragma
     pragma: no cover
