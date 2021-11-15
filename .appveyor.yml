@@ -41,7 +41,7 @@ build_script:
 
 test_script:
   - python -c "import sys; print(sys.version)"
-  - python setup.py test
+  - python setup.py test --offline
 
 after_test:
   # - conda install -c conda-forge codecov
