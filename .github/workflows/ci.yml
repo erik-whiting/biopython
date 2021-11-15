@@ -203,8 +203,7 @@ jobs:
 
     - name: Run test suite and get coverage
       run: |
-        cd Tests
-        coverage run run_tests.py --offline
+        coverage run Tests/run_tests.py --offline
         coverage xml
       shell: bash
 
