@@ -4855,7 +4855,6 @@ class TestGeo(unittest.TestCase):
         with open(path, encoding="latin") as handle:
             records = Geo.parse(handle)
             record = next(records)
-            self.ssertEqual(records, records)
             self.assertEqual(
                 str(record),
                 """\
