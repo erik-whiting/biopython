@@ -91,8 +91,6 @@ jobs:
   build:
     needs: [style]
     runs-on: ubuntu-latest
-    env:
-      CODECOV_TOKEN: fbcc807e-cf34-42a7-b4b9-be4f48205940
 
     steps:
     - uses: actions/checkout@v2
@@ -163,6 +161,8 @@ jobs:
     timeout-minutes: 15
     needs: [style, build, build_wheels, linux_prep]
     runs-on: ubuntu-latest
+    env:
+      CODECOV_TOKEN: fbcc807e-cf34-42a7-b4b9-be4f48205940
     strategy:
       matrix:
         python-version: [3.7, 3.8, 3.9]
