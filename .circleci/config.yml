@@ -7,8 +7,6 @@
 # https://circleci.com/developer/images/image/cimg/python
 
 version: 2.1
-orbs:
-  codecov: codecov/codecov@1.0.2
 jobs:
   build:
     docker:
@@ -45,10 +43,6 @@ jobs:
           name: Test
           command: |
             # Use the unzipped tar-ball where built wheel
-            cd biopython-*/Tests/
-            rm -rf coverage.xml
-            coverage run run_tests.py --offline
+            python setup.py test --offline
             echo "Tests run"
-            coverage xml
-      - codecov/upload:
-          file: biopython-*/Tests/coverage.xml
+
